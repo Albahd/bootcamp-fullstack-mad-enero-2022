@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.card__container{
+    max-width: 350px;
+    height: 600px;
+    box-shadow: 7px 17px 50px -2px rgba(0,0,0,0.75);
+    transition-duration: 2s;
+    transition-property: transform;
+   
+
+
+}
+
+.card__image {
+   background-image: url("https://assets.adidas.com/images/w_600,f_auto,q_auto/c7227d99699243099c24ac5e00406c2c_9366/Zapatilla_Forum_Mid_Blanco_FY4976_01_standard.jpg");
+   background-size:cover;
+   height: 300px;
+   display: flex;
+   justify-content: center;
+   
+ 
+}
+
+.card__container:hover{
+    transform:rotate(-2.1deg) scale(1.1)
+}
+.card__image h2{
+    align-self: center;
+    background-color: white;
+    border-color: gray;
+    box-shadow: 2px -6px 7px #575057;
+
+
+
+
+}
+
+.card__information{
+    height: 300px;
+    padding: 30px;
+
+
+
+}
+.information__adidas{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: flex-start;
+
+    
+}
+
+.adidas__price{
+    color:blue;
+    font-weight: bold;
+
+}
+
+ .information__sizes{
+        margin-bottom: 20px;
+ }
+    
+
+
+.colors__list{
+    list-style: none;
+    display: flex;
+    
+
+}
+
+.sizes__list{
+    list-style: none;
+    display: flex;
+    
+
+}
+
+
+.bg-blue{background-color: blue;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border-color: grey;
+    margin-right: 10px;
+    
+}
+
+.bg-red{background-color: red;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border-color: grey;
+    margin-right: 10px;
+
+
+}
+
+.bg-green{background-color: greenyellow;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border-color: grey;
+    margin-right: 10px;
+
+
+}
