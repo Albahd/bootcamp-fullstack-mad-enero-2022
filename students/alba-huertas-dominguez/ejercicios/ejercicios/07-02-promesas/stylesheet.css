@@ -28,12 +28,15 @@ body{
 
 .imagen{
 padding: 10px;
-background-color:#7BD733  ;
+background-color: #7BD733 ;
 border-top-left-radius: 10%;
 border-top-right-radius: 10%;
 
 
 }
+
+        
+        
 .imagen-p{
    width: 40px;
     height: 10px;

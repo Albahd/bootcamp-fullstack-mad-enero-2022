@@ -33,7 +33,8 @@ function pintar(battery) {
         mensaje.textContent = "esta cargando";
         bateria.textContent = battery.level * 100 + "%";
         const divpila = document.querySelector(".imagen-g");
-
+        const fondo = document.querySelector(".imagen");
+        fondo.classList.add('imagen')
         cargar = setInterval(() => {
             if (counter > 3) {
                 borrar()
@@ -55,16 +56,22 @@ function pintar(battery) {
 function fijo(battery) {
     mensaje.textContent = "no esta cargando";
     bateria.textContent = battery.level * 100 + "%";
+    const fondo = document.querySelector(".imagen");
 
     let celdas = 0
     if (battery.level > 0.2 && battery.level <= 0.4) {
         celdas = 1;
+        fondo.style.backgroundColor ='#EF260B' 
+        ;
     } else if (battery.level > 0.4 && battery.level <= 0.6) {
         celdas = 2;
+        fondo.style.backgroundColor ='#EBAE0D ';
     } else if (battery.level > 0.6 && battery.level <= 0.9) {
         celdas = 3;
+        fondo.style.backgroundColor ='#D3EE0C' ;
     } else if (battery.level > 0.9) {
         celdas = 4;
+        fondo.style.backgroundColor ='#7BD733' ;
 
     }
     for (let i = 0; i < celdas; i++) {
