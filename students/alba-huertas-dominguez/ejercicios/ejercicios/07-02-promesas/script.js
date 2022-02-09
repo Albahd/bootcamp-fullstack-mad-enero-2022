@@ -63,6 +63,9 @@ function fijo(battery) {
         celdas = 1;
         fondo.style.backgroundColor ='#EF260B' 
         ;
+    } else if (battery.level>0.2) {
+        fondo.style.backgroundColor ='#EF260B'
+
     } else if (battery.level > 0.4 && battery.level <= 0.6) {
         celdas = 2;
         fondo.style.backgroundColor ='#EBAE0D ';
@@ -92,7 +95,6 @@ navigator.getBattery().then(battery => {
     console.log(battery.level)
     batteryIsCharging = battery.charging;
     if(battery.charging ===true){
-
     pintar(battery);
     } else{ fijo(battery)};
     
