@@ -68,35 +68,51 @@ function Print(data) {
 // ¿Qué tipo de datos tiene esos atributos?
 // ¿Qué código http de respuesta hemos recibido?
 
+        async function getFruits(){
+            const r = await fetch('https://run.mocky.io/v3/b68bb258-78a1-4c92-acf5-2c5401707ae0');
+            const fruits = await r.json();
+            return fruits;
+        }
 
-async function fruits() {
-    const r = await fetch(`https://run.mocky.io/v3/b68bb258-78a1-4c92-acf5-2c5401707ae0`);
-    const data = await r.json();
-    return data;
+        function printFruit(fruit){
+            // pinta una fruta en el HTML
+            const container = document.createElement('div');
 
-}
-fruits()
+            const img = document.createElement('img');
+            img.src = fruit.img;
 
+            const pName = document.createElement('p');
+            pName.textContent = fruit.name;
 
-function print(fruit) {
-    const imagen = document.createElement('img');
-    imagen.src = fruit.img
-    const parrafo = document.createElement('p');
-    parrafo.textContent = fruit.name
-    const parrafo2 = document.createElement('p');
-    parrafo2.textContent = fruit.origin;
-    document.body.appendChild(parrafo);
-    document.body.appendChild(imagen);
-    document.body.appendChild(parrafo2)
-}
+            const pOrigin = document.createElement('p');
+            pOrigin.textContent = fruit.origin;
 
-function printFruits(fruitArr) {
-    fruitArr.forEach(f => print(f));
-};
+            container.appendChild(pName);
+            container.appendChild(img);
+            container.appendChild(pOrigin);
 
+            document.body.appendChild(container);
+        }
 
+        function printFruits(fruitArr){
+            // pinte todas sus frutas en el HTML
+            fruitArr.forEach(f => printFruit(f));
+        }
 
-printFruits(data)
-
-
-
+        /*
+            ¿Qué tipo de datos tiene la respuesta? --Array Objetos --JSON
+            ¿Cuál es la ip y el puerto de la petición? -- 46.252.181.104:443
+            ¿Cuántos atributos tiene cada elemento de la fruta de la respuesta? -- 3
+            ¿Qué tipo de datos tiene esos atributos? -- 3 strings
+            ¿Qué código http de respuesta hemos recibido? -- 202 Accepted
+        */
+       async function startApp(){
+          const fruits = await getFruits();
+          printFruits(fruits);
+       }
+    
+       startApp();
+    // let fruits;
+    // getFruits().then(f => printFruits(f));
+    // // se ejecuta antes que el resol
+    // printFruits(fruits); // aqui fruits es undefined
